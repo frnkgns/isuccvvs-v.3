@@ -43,6 +43,7 @@
 
         <div class="collegeofficers" style="font-size: 20px; font-family: Arial; margin-top: 100px; margin-bottom: 100px;"> COLLEGE OFFICERS UPCOMING </div>
     </div>
+
     <script>
         // fetch natin yung data sa sql sa external js script
         const sscOfficers = JSON.parse('<?php echo $sscOfficersJSON; ?>');

@@ -20,16 +20,14 @@
                 $college = $row['college'];
                 if ($college == "admin") {
                     echo "<script>window.location.href='$adminhtml';</script>";
-                    exit; // Stop further execution
                 } else if ($college == "sas" || $college == "ccsict" || $college == "ps" || $college == "iat" || $college == "ced" || $college == "cbm" || $college == "crim") {
                     echo "<script>window.location.href='$votingarea';</script>";
-                    exit; // Stop further execution
                 }
             } else {
                 echo '<div class="alrt-container">
-                        <div class="alert alert-success alrt">Code is not register, consult the admin</div>
+                        <div class="alert alert-danger" role="alert">Code is not registered, consult the admin</div>
                       </div>';
-                // header("Refresh: 2;");
+
             }
         } else {
             echo "<script type='text/javascript'> alert('Couldn't Connect') </script>";
@@ -55,14 +53,14 @@
         <div class="logo">
             <img src="Pictures/isulogo.png" class="isulogo">
             <p class="isu" style="font-family: sans-serif; margin-top: 30px;">ISABELA STATE UNIVERSITY CAUAYAN CAMPUS</p>
+            <div class="regdiv" style="display: flex justify-content: center" >
+                <button type="button" class="btn btn-success btn1 w regbtn" onclick="window.location.href='FormAdd.php'">Register</button>
+            </div>
             <div class="form-group">
                 <input id="code" class="form-control code" placeholder="Enter Your Code Here" name="entercode">
-                <small id="emailHelp notreg-text" class="form-text text-muted notreg-text">Log in your unique code to proceed to voting area.</small>
+                <small id="emailHelp notreg-text" class="form-text text-muted notreg-text">Log in your unique code to proceed.</small>
             </div>
             <!-- <p class="notreg-text" id="notreg-text" style="font-family: sans-serif;">Code is not Registered</p> -->
-        </div>
-        <div style="display: flex justify-content: center">
-            <button type="button" class="btn btn-success btn1 w" onclick="window.location.href='FormAdd.php'">Register</button>
         </div>
     </form>
     <!--Then eto nilink rin natin yung js para magamit, then bakit nasa baba kasi para hindi sya agad mag magamit kailangan mauna muna mag load yung html elements bago yung functionalities-->

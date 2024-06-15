@@ -7,6 +7,14 @@
 
     addbtn.addEventListener('click', showAdd);
 
+    // Get the computed width of .regdiv
+    const regdivWidth = document.querySelector('.regdiv').offsetWidth;
+
+    // Apply the width to .regbtn
+    document.querySelector('.regbtn').style.width = regdivWidth + 'px';
+
+
+
     //so dinagdagan natin ng eventlistener para may gagawin sya
 
     //once priness natin yung enter Key sa laptop or sa cp keyboard
