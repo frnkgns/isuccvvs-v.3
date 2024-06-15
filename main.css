@@ -1,0 +1,139 @@
+body{
+    margin: 0px;
+}
+
+.container{
+    text-align: center;
+}
+
+.isuhead{
+    position: absolute;
+    height: 115px;
+    margin-left: -300px;
+    margin-top: -15px;
+}
+
+.greenbox{
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.redbox{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 0 10px 0;
+    background-color: maroon;
+    color: white;
+    border-radius: 0 0 50px 50px;
+}
+
+.header{
+    color: white;
+    background-color: green;
+    position: sticky;
+    position: -webkit-sticky; 
+    padding-top: 20px;
+    top: 0px;
+    z-index: 1000;
+    border-radius: 0 0 40px 40px;
+}
+
+.instruction{
+    margin-top: -10px;
+}
+
+.position-text{
+    font-family: sans-serif;
+    font-size: 20px;
+    position: absolute;
+    margin-top: -20px;
+}
+
+.president, .vicepresident,.treasurer, .auditor, .accountant, .sas_council, .cbm_council, .ccje_council, .ced_council, .ps_council, .iat_council, .ccsict_council{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.sscofficers, .collegeofficers{
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.president-placard, .vicepresident-placard, .treasurer-placard, .auditor-placard, .accountant-placard, .sas_council-placard, .cbm_council-placard, .ccje_council-placard, .ced_council-placard, .ps_council-placard, .iat_council-placard, .ccsict_council-placard{
+    display: flex;
+    height: 150px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+}
+
+.president-placard:hover, .vicepresident-placard:hover, .treasurer-placard:hover, .auditor-placard:hover, .accountant-placard:hover, .sas_council-placard:hover, .cbm_council-placard:hover, .ccje_council-placard:hover, .ced_council-placard:hover, .ps_council-placard:hover, .iat_council-placard:hover, .ccsict_council-placard:hover,
+.president-placard.clicked, .vicepresident-placard.active, .treasurer-placard.active, .auditor-placard.active, .accountant-placard.active, .sas_council-placard.active, .cbm_council-placard.active, .ccje_council-placard.active, .ced_council-placard.active, .ps_council-placard.active, .iat_council-placard.active, .ccsict_council-placard.active {
+    background-color: #f0f0f0
+}
+
+.imgofficer{
+    height: 150px;
+    width: 100px;
+    border-radius: 10px 0 0 10px;
+}
+
+.imgofficercollege{
+    position: absolute;
+    background-color: white;
+    padding: 5px;
+    height: 50px;
+    align-self: last baseline;
+    border-radius: 0 50px 50px 20px;
+}
+
+.officername{
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.officercourse{
+    font-family: sans-serif;
+    font-size: 10px;
+    margin-top: -14px;
+}
+
+.officerquote{
+    margin-top: 5px;
+    font-family: 'Trebuchet MS';
+    font-style: italic;
+    font-size: 10px;
+}
+
+.textcontainer{
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.votecontainer{
+    position: absolute;
+    align-self: baseline;
+    display: flex;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+
+.imgvote{
+    height: 40px;
+}
+
+.voted{
+    background-color: yellowgreen;
+}
+
+.hide{
+    display: none;
+}
