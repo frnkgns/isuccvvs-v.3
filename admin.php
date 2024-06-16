@@ -8,7 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+    <p class="greeting">Welcome to Admin panel</p>
     <div class="subcontainer">
+        <button type="button" class="btn btn-secondary btn1" onclick="window.location.href= 'dashboard.php'">Dashboard</button>
         <button type="button" class="btn btn-warning btn1 " onclick="window.location.href='FormFindID.php'">Update</button>
         <button type="button" class="btn btn-danger btn1 w" onclick="window.location.href='FormDelete.php'">Delete</button>
         <button type="button" class="btn btn-primary btn1 w" onclick="window.location.href='index.php'">Back</button>
