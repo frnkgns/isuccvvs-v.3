@@ -1,15 +1,23 @@
 body{
-    background-color: #E1D9D1 ;
+    background-color: #ffff;
     margin: 0;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
+.greeting{
+    font-size: x-large;
+    margin-top: 150px;
+}
 
 .subcontainer{
-    margin-top: 150px;
+    padding: 30px;
+    order-radius: 10px;
+    background-color: #e0c5a9;
+    margin-top: 100px;
     display: inline-block;
-    width: 300px;
+    width: 400px;
+    height: 350px;
 }
 
 .btn1{
