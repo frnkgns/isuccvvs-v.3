@@ -62,69 +62,61 @@ organizationSelect.addEventListener("change", function() {
     } else if (selectedOrganization === "SBO") {
         // Add options for organization B
         var option1 = document.createElement("option");
-        option1.text = "COUNCILOR";
-        option1.value = option1.text;
+        option1.text = "SBO COUNCILOR";
+        option1.value = "SBOCOUNCILOR";
         
         var option2 = document.createElement("option");
-        option2.text = "PRESIDENT";
-        option2.value = option2.text;
+        option2.text = "SBO PRESIDENT";
+        option2.value = "SBOPRESIDENT";
         
         var option3 = document.createElement("option");
-        option3.text = "VICE-PRESIDENT";
-        option3.value = option3.text;
+        option3.text = "SBO VICE-PRESIDENT";
+        option3.value = "SBOVICE-PRESIDENT";
         
         var option4 = document.createElement("option");
-        option4.text = "SECRETARY";
-        option4.value = option4.text;
+        option4.text = "SBO SECRETARY";
+        option4.value = "SBOSECRETARY";
         
         var option5 = document.createElement("option");
-        option5.text = "TREASURER";
-        option5.value = option5.text;
+        option5.text = "SBO TREASURER";
+        option5.value = "SBOTREASURER";
         
         var option6 = document.createElement("option");
-        option6.text = "AUDITOR";
-        option6.value = option6.text;
+        option6.text = "SBO AUDITOR";
+        option6.value = "SBOAUDITOR";
         
         var option7 = document.createElement("option");
-        option7.text = "ACCOUNTANT";
-        option7.value = option7.text;
+        option7.text = "SBO ACCOUNTANT";
+        option7.value = "SBOACCOUNTANT";
         
         var option8 = document.createElement("option");
-        option8.text = "TREASURER";
-        option8.value = option8.text;
+        option8.text = "SBO PIO";
+        option8.value = "SBOPIO";
         
         var option9 = document.createElement("option");
-        option9.text = "AUDITOR";
-        option9.value = option9.text;
+        option9.text = "SBO BUSINESS MANAGER I";
+        option9.value = "SBOBUSINESSMANAGERI";
         
         var option10 = document.createElement("option");
-        option10.text = "PIO";
-        option10.value = option10.text;
+        option10.text = "SBO BUSINESS MANAGER II";
+        option10.value = "SBOBUSINESSMANAGERII";
         
         var option11 = document.createElement("option");
-        option11.text = "BUSINESS MANAGER I";
-        option11.value = option11.text;
+        option11.text = "SBO 1ST YEAR REPRESENTATIVE";
+        option11.value = "SBO1STYEARREPRESENTATIVE";
         
         var option12 = document.createElement("option");
-        option12.text = "BUSINESS MANAGER II";
-        option12.value = option12.text;
+        option12.text = "SBO 2ND YEAR REPRESENTATIVE";
+        option12.value = "SBO2NDYEARREPRESENTATIVE";
         
         var option13 = document.createElement("option");
-        option13.text = "1ST YEAR REPRESENTATIVE";
-        option13.value = option13.text;
+        option13.text = "SBO 3RD YEAR REPRESENTATIVE";
+        option13.value = "SBO3RDYEARREPRESENTATIVE";
         
         var option14 = document.createElement("option");
-        option14.text = "2ND YEAR REPRESENTATIVE";
-        option14.value = option14.text;
-        
-        var option15 = document.createElement("option");
-        option15.text = "3RD YEAR REPRESENTATIVE";
-        option15.value = option15.text;
-        
-        var option16 = document.createElement("option");
-        option16.text =  "4TH YEAR REPRESENTATIVE";
-        option16.value = option16.text;
-        
+        option14.text = "SBO 4TH YEAR REPRESENTATIVE";
+        option14.value = "SBO4THYEARREPRESENTATIVE";
+
 
         // Append options to positionSelect
         positionSelect.appendChild(option1);
@@ -158,7 +150,7 @@ collegeSelect.addEventListener("change", function() {
     defaultOption.text = "Select Program";
     defaultOption.value = "";
     defaultOption.disabled = true;
-    defaultOption.selected = true;
+    defaultOption.selected = true;  
 
     // Append default option to positionSelect
     courseSelect.appendChild(defaultOption);

@@ -9,44 +9,45 @@
 <body>
     <p class="title addbx">INPUT THE FOLLOWING TO ADD NEW OFFICERS</p>
     <form method="post" enctype="multipart/form-data">
-    <div class="maincontainer">
-            <div class="secondcontainer">
-                <select id="organization" class="position inputbx" placeholder="Organization" name="organization">
-                    <option value="" disabled selected hidden>Select Organization</option>
-                    <option value="SSC">SSC</option>
-                    <option value="SBO">SBO</option>
-                </select>
-                <select id="position" class="position inputbx" placeholder="Position" name="position"> 
-                    <option value="" disabled selected hidden>Select Position</option>
-                </select>
-                <input class="stdntid inputbx" placeholder="Student ID" name="studentid">
-                <input class="name inputbx" placeholder="Name" name="name">
-                <select id="college" class="college inputbx" placeholder="College" name="college"> 
-                    <option value="" disabled selected hidden>Select College</option>
-                    <option value="CBM">CBM</option>
-                    <option value="CED">CED</option>
-                    <option value="CCJE">CCJE</option>
-                    <option value="CCSICT">CCSICT</option>
-                    <option value="SAS">SAS</option>
-                    <option value="IAT">IAT</option>
-                    <option value="PS">PS</option>
-                </select>
-                <select id="course" class="course inputbx" placeholder="Course" name="course">
-                    <option value="" disabled selected hidden>Select Course</option>
-                </select>
-                <input class="quotes inputbx" placeholder="Quotes" name="quotes">
-                <input type="submit" class="submitbx inputbx" value="Submit">
-            </div>
-            <div class="imagecontainer">
-                <label class="addbx" for="input-file" id="drop-area">
-                    <input type="file" name="img" accept="image/*" id="input-file" hidden>
-                    <div id="img-view">
-                        <img src="Pictures/uploadpng.png">
-                        <p style="font-family: Arial;">Drag and drop or click here <br> to upload image</p>
-                        <span style="font-family: Arial;">Upload any image of the candidate</span>
-                    </div>
-                </label>
-                <input class="backbtn inputbx" onclick="window.location.href= 'index.php'" value="Back">
+        <div class="maincontainer">
+                <div class="secondcontainer">
+                    <select id="organization" class="position inputbx" placeholder="Organization" name="organization">
+                        <option value="" disabled selected hidden>Select Organization</option>
+                        <option value="SSC">SSC</option>
+                        <option value="SBO">SBO</option>
+                    </select>
+                    <select id="position" class="position inputbx" placeholder="Position" name="position"> 
+                        <option value="" disabled selected hidden>Select Position</option>
+                    </select>
+                    <input class="stdntid inputbx" placeholder="Student ID" name="studentid">
+                    <input class="name inputbx" placeholder="Name" name="name">
+                    <select id="college" class="college inputbx" placeholder="College" name="college"> 
+                        <option value="" disabled selected hidden>Select College</option>
+                        <option value="CBM">CBM</option>
+                        <option value="CED">CED</option>
+                        <option value="CCJE">CCJE</option>
+                        <option value="CCSICT">CCSICT</option>
+                        <option value="SAS">SAS</option>
+                        <option value="IAT">IAT</option>
+                        <option value="PS">PS</option>
+                    </select>
+                    <select id="course" class="course inputbx" placeholder="Course" name="course">
+                        <option value="" disabled selected hidden>Select Course</option>
+                    </select>
+                    <input class="quotes inputbx" placeholder="Quotes" name="quotes">
+                    <input type="submit" class="submitbx inputbx" value="Submit">
+                </div>
+                <div class="imagecontainer">
+                    <label class="addbx" for="input-file" id="drop-area">
+                        <input type="file" name="img" accept="image/*" id="input-file" hidden>
+                        <div id="img-view">
+                            <img src="Pictures/uploadpng.png">
+                            <p style="font-family: Arial;">Drag and drop or click here <br> to upload image</p>
+                            <span style="font-family: Arial;">Upload any image of the candidate</span>
+                        </div>
+                    </label>
+                    <input class="backbtn inputbx" onclick="window.location.href= 'index.php'" value="Back">
+                </div>
             </div>
         </div>
     </form>
@@ -86,7 +87,7 @@
             } else {
                 if(in_array($extensionname, $allowedType)){
                     if(move_uploaded_file($tempName, $targetPath)){
-                        $query2 = "insert into candidates values ('$studentid','$organization','$position', '$name', '$college', '$course', '$quotes', '$imagename')";
+                        $query2 = "insert into candidates values ('$studentid', '0' ,'$organization','$position', '$name', '$college', '$course', '$quotes', '$imagename')";
                         $result2 = mysqli_query($con, $query2);
 
                         if($result2){

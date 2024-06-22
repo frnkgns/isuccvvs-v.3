@@ -5,12 +5,12 @@
 
     include("db.php");
     $adminhtml = "admin.php";
-    $votingarea = "main.php";
+
     
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $logincodes = $_POST['entercode'];
 
-        $query = "select * from logincode where '$logincodes' = code limit 1";
+        $query = "select * from logincode where code = '$logincodes'";
         $execute = mysqli_query($con, $query);
         
 
@@ -21,7 +21,19 @@
                 if ($college == "admin") {
                     echo "<script>window.location.href='$adminhtml';</script>";
                 } else if ($college == "sas" || $college == "ccsict" || $college == "ps" || $college == "iat" || $college == "ced" || $college == "cbm" || $college == "crim") {
-                    echo "<script>window.location.href='$votingarea';</script>";
+                    
+                    $voted = $row['Voted'];
+                    if($voted == "yes"){
+                        echo '<div class="alrt-container">
+                        <div class="alert alert-success" role="alert">You already submitted your vote.</div>
+                      </div>';
+                    
+                    } else {
+                        $encoded_variable = urlencode($college);
+                        $encoded_logincode = urlencode($logincodes);
+                        header("Location: TEST.php?variable=$college&login_code=$logincodes");
+
+                    }
                 }
             } else {
                 echo '<div class="alrt-container">
@@ -65,6 +77,5 @@
     </form>
     <!--Then eto nilink rin natin yung js para magamit, then bakit nasa baba kasi para hindi sya agad mag magamit kailangan mauna muna mag load yung html elements bago yung functionalities-->
     <script> var college = "<?php echo $college; ?>";</script>
-    <script src="script.js"></script>
 </body>
-</html>
+</html> 

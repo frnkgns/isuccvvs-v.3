@@ -6,66 +6,18 @@ let ccjeimg = 'Pictures/Crim.png';
 let cbmimg = 'Pictures/cbm.png';
 let psimg = 'Pictures/polytechnic.png';
 
+const UserVotes = []
+const submitbt = document.getElementById("submitbtn");
+const presslide = document.getElementById("presidentslide");
+const viceslide = document.getElementById("vicepresidentslide");
+const secretaryslide = document.getElementById("secretaryslide");
+const treasurerslide = document.getElementById("treasurerslide");
+const auditorslide = document.getElementById("auditorslide");
+const accountantslide = document.getElementById("accountantslide");
+
+
+
 function Dynamicallycreateelement(){
-
-    //so this is actually an array objects parang mag sstore lang tayo ng maraming varaible sa array
-    const sscOfficers1 = [
-        {position: "president", name:'Frank Ellis A. Gines', collegeimg: 'Pictures/cct.png' ,course: 'BSCS - 3A DM',collegecolor: 'RED',image: 'Pictures/male hap badi.png', quotes: "Life is like riding a bicycle."}, 
-        {position: "president", name:'Don Don Comia', collegeimg: 'Pictures/ced.png', course: 'CED - 3A DM', collegecolor: 'blue', image: 'Pictures/male hap badi.png', quotes: "Life is like riding a bicycle. To keep your balance, you must keep moving." },
-        {position: "president", name:'Jusip Orinio', collegeimg: 'Pictures/ced.png', course: 'BAELS - 3A DM', collegecolor: 'darkviolet', image: 'Pictures/male hap badi.png', quotes: "Life is like riding a bicycle. To keep your balance, you must keep moving." },
-        {position: "president", name: 'Junny Lester Paguia', collegeimg: 'Pictures/agri.png', course: 'IAT - 3A DM', collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes: "Life is like riding a bicycle. To keep your balance, you must keep moving." },
-        {position: "president", name: 'Michael A. Johnson', collegeimg: 'Pictures/agri.png', course: 'IAT - 3A DM', collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes: "Success is not final, failure is not fatal: It is the courage to continue that counts." },
-        {position: "president", name: 'Christopher M. Smith', collegeimg: 'Pictures/agri.png', course: 'IAT - 3A DM', collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes: "Believe you can and you're halfway there." },
-        {position: "president", name: 'Andrew W. Williams', collegeimg: 'Pictures/agri.png', course: 'IAT - 3A DM', collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes: "The only limit to our realization of tomorrow will be our doubts of today." },
-        {position: "president", name: 'David J. Brown', collegeimg: 'Pictures/agri.png', course: 'IAT - 3A DM', collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes: "You are never too old to set another goal or to dream a new dream." },
-        {position: "president", name: 'Robert E. Miller', collegeimg: 'Pictures/agri.png', course: 'IAT - 3A DM', collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful." },
-        {position: "president", name: 'Daniel P. Wilson', collegeimg: 'Pictures/agri.png', course: 'IAT - 3A DM', collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes: "The future belongs to those who believe in the beauty of their dreams." },
-        {position: "president", name: 'James L. Martinez', collegeimg: 'Pictures/agri.png', course: 'IAT - 3A DM', collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes: "It does not matter how slowly you go as long as you do not stop." },
-        {position: "president", name: 'Richard S. Taylor', collegeimg: 'Pictures/agri.png', course: 'IAT - 3A DM', collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes: "In the middle of difficulty lies opportunity." },
-        {position: "president", name:'Franklin G. Garcia', collegeimg: 'Pictures/cct.png' ,course: 'BSCS - 3A DM',collegecolor: 'RED',image: 'Pictures/male hap badi.png', quotes: "Your time is limited, don't waste it living someone else's life."}, 
-        {position: "president", name:'Donald T. Thompson', collegeimg: 'Pictures/ced.png', course: 'CED - 3A DM', collegecolor: 'blue', image: 'Pictures/male hap badi.png', quotes: "The only way to do great work is to love what you do." },
-    ]
-    const iatOfficers = [
-        {position: "iat_president", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 4", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_president", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 3", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_president", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 2", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-
-        {position: "iat_vice_president", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 4", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_vice_president", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 3", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_vice_president", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 2", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-    
-        {position: "iat_secretatry", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 4", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_secretatry", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 3", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_secretatry", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 2", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-
-        {position: "iat_treasurer", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 4", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_treasurer", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 3", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_treasurer", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 2", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        
-        {position: "iat_auditor", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 4", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_auditor", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 3", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_auditor", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 2", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        
-        {position: "iat_accountant", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 4", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_accountant", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 3", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_accountant", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 2", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        
-        {position: "iat_4th_year_rep", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 4", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_4th_year_rep", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 4", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_4th_year_rep", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 4", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        
-        {position: "iat_3rd_year_rep", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 3", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_3rd_year_rep", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 3", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_3rd_year_rep", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 3", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        
-        {position: "iat_2nd_year_rep", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 2", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_2nd_year_rep", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 2", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-        {position: "iat_2nd_year_rep", name: "Edith Leonidas", collegeimg: 'Pictures/agri.png', course: "BAT - 2", collegecolor: 'green', image: 'Pictures/male hap badi.png', quotes:"You will face many defeats in life, but never let yourself be defeated."},
-    ]
-
-    //then of course we need to loop sa object array then sa loob narin ng loopin
-    //natin iinitialized yung mga dynamically elements as well as yung mga styles nila
-
 
     //dito na starting ng dynamic elements
     for(let i = 0; i < sscOfficers.length; i++){
@@ -85,6 +37,12 @@ function Dynamicallycreateelement(){
         let officercourse = document.createElement('p');
         officercourse.classList.add('officercourse');
         officercourse.textContent = sscOfficers[i].course;
+
+        let officerid = document.createElement('p');
+        officerid.setAttribute('type', 'text');
+        officerid.setAttribute('name', 'dynamicName');
+        officerid.classList.add('officerid');
+        officerid.textContent = sscOfficers[i].studentid;
 
         let officerquote = document.createElement('p');
         officerquote.classList.add('officerquote');
@@ -141,7 +99,7 @@ function Dynamicallycreateelement(){
         //dito sa votecontainer natin ilalagay yung imagevote, tyaka textvote, para kaapg nag adjust tayo 
         //sa css container nlang gagalawin natin, 'sana'
         let votecontainer = document.createElement('div');
-        votecontainer.classList.add('votecontainer');
+        votecontainer.classList.add('votescount');
 
         //itong mga nasa baba ibig sabihin naman neto is nilalagay natin sa loob ng element kung ano yung nasa parenthesis
         votecontainer.appendChild(votetext);
@@ -150,56 +108,70 @@ function Dynamicallycreateelement(){
         textcontainer.appendChild(officername);
         textcontainer.appendChild(officercourse)
         textcontainer.appendChild(officerquote);
-        textcontainer.appendChild(votecontainer)
+        textcontainer.appendChild(votecontainer);
+        textcontainer.appendChild(officerid);
+
 
         addsscOfficers.appendChild(imgofficer);
         addsscOfficers.appendChild(imgofficercollege);
         addsscOfficers.appendChild(textcontainer);
 
+
         
 
         //ilalagay natin sa perfective positions yung mga candidates, hindi kasi pwedeng nasa president category
         //si treasurer and the rest of the positions, actually maganda to kapag loop
-        var Positions = ['president', 'vicepresident', 'treasurer', 'auditor','accountant', 'sas_council', 'ccsict_council', 'cbm_council', 'ced_council', 'iat_council', 'ccje_council', 'ps_council'];
+        var Positions = ['president', 'vice-president', 'secretary','treasurer', 'auditor','accountant', 'sas_council', 'ccsict_council', 'cbm_council', 'ced_council', 'iat_council', 'ccje_council', 'ps_council'];
 
         if(sscOfficers[i].position.toLowerCase() == 'president'){
             president.appendChild(addsscOfficers);
 
-        } else if(sscOfficers[i].position == 'vicepresident'){
+        } else if(sscOfficers[i].position.toLowerCase() == 'vice-president'){
             vicepresident.appendChild(addsscOfficers);
 
-        } else if(sscOfficers[i].position == 'treasurer'){
+        } else if(sscOfficers[i].position.toLowerCase() == 'secretary'){
+            secretary.appendChild(addsscOfficers);
+
+
+        } else if(sscOfficers[i].position.toLowerCase() == 'treasurer'){
             treasurer.appendChild(addsscOfficers);
 
-        } else if(sscOfficers[i].position == 'accountant'){
+        } else if(sscOfficers[i].position.toLowerCase() == 'accountant'){
             accountant.appendChild(addsscOfficers);
             
-        } else if(sscOfficers[i].position == 'auditor'){
+        } else if(sscOfficers[i].position.toLowerCase() == 'auditor'){
             auditor.appendChild(addsscOfficers);
             
-        }else if(sscOfficers[i].position == 'sas_council'){
+        }else if(sscOfficers[i].position.toLowerCase() == 'sas_council'){
             sascouncil.appendChild(addsscOfficers);
             
-        } else if(sscOfficers[i].position == 'ccsict_council'){
+        } else if(sscOfficers[i].position.toLowerCase() == 'ccsict_council'){
             ccsictcouncil.appendChild(addsscOfficers);
             
-        } else if(sscOfficers[i].position == 'ps_council'){
+        } else if(sscOfficers[i].position.toLowerCase() == 'ps_council'){
             pscouncil.appendChild(addsscOfficers);
             
-        } else if(sscOfficers[i].position == 'iat_council'){
+        } else if(sscOfficers[i].position.toLowerCase() == 'iat_council'){
             iatcouncil.appendChild(addsscOfficers);
             
-        } else if(sscOfficers[i].position == 'ccje_council'){
+        } else if(sscOfficers[i].position.toLowerCase() == 'ccje_council'){
             ccjecouncil.appendChild(addsscOfficers);
             
-        } else if(sscOfficers[i].position == 'ced_council'){
+        } else if(sscOfficers[i].position.toLowerCase() == 'ced_council'){
             cedcouncil.appendChild(addsscOfficers);
             
-        } else if(sscOfficers[i].position == 'cbm_council'){
+        } else if(sscOfficers[i].position.toLowerCase() == 'cbm_council'){
             cbmcouncil.appendChild(addsscOfficers);
         }
 
-                    
+        presslide.appendChild(president);
+        viceslide.appendChild(vicepresident);
+        secretaryslide.appendChild(secretary);
+        treasurerslide.appendChild(treasurer);
+        auditorslide.appendChild(auditor);
+        accountantslide.appendChild(accountant);
+
+        
         //then itong function mag seserved sa lahat ng placards ng click function as well as yung hide functions nila
         function showvoted(){
             //then itong part needed para makapag loop tayo sa selection ng placards from pres-businessM
@@ -215,6 +187,12 @@ function Dynamicallycreateelement(){
                         //the rest ihahide nanatin
                         allplacards.forEach(function(element, idx) {
                             if (idx == index){
+                                
+                                UserVotes.length = 0;
+                                let Studentid = officer.querySelector('.officerid').textContent.trim();
+                                UserVotes.push(Studentid);
+                                console.log(UserVotes);
+                                
                                 officer.style.backgroundColor = '#b3ffb3';
                                 var imgvote = officer.querySelector('.imgvote');
                                 var votetext = officer.querySelector('.votetext');
@@ -248,12 +226,37 @@ function Dynamicallycreateelement(){
                         });
                     });
                 });
-            })
+            });
         }
 
         //of course hindi gagana yung function kapag hindi mo natawag, kaya need muna natin tawagin
         showvoted();
     }
+
+    //Dito yung mangyayari yung voting
+    submitbt.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        let formData = new FormData();
+        UserVotes.forEach((value, index) => {
+            formData.append('strings[]', value); // 'strings[]' ensures PHP treats it as an array
+        });
+
+        fetch('VotingSubmitQuery.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data); // Response from PHP script
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
 }
+
 //lalo nato
 Dynamicallycreateelement();
+
+

@@ -5,7 +5,7 @@
 
     include("db.php");
 
-    $query = "select * from candidates where organization = 'SSC'";
+    $query = "select * from candidates where organization = 'SSC' order by NoofVotes desc";
     $result = mysqli_query($con, $query);
     $sscOfficers = array();
     if ($result->num_rows > 0) {
@@ -14,12 +14,8 @@
         }
     }
 
-    $college_variable = urldecode($_GET['variable']);
-    $login_code = $_GET['login_code'];
-    $loginJSON = json_encode(array("login_code" => $login_code));
-
-
-    $query1 = "select * from candidates where college = '{$college_variable}' and organization = 'SBO'";
+    $collegename = $_GET['college'];
+    $query1 = "select * from candidates where college = '{$collegename}' and organization = 'SBO' order by NoofVotes desc";
     $result1 = mysqli_query($con, $query1);
     $sboOfficers = array();
     if ($result1->num_rows > 0) {
@@ -56,16 +52,70 @@
             <p class="redbox">CANDIDATES</p>
         </div>
         <p id="instruction" class="instruction" style="font-family: sans-serif; font-size: 15px;">*Select the placards of your chosen candidates</p>
+        <div style="display:flex; justify-content: center;">
+            <div class="submitbtnsize">
+                <button class="button-27" id="submitbtn" onclick="window.location.href='dashboardbtn.php'">Back</button>
+            </div>
+        </div>
+    </div>
 
-    <div class="slideshow-container">
+    <div class="slideshow-container" style="margin-top: 50px;">
         <!-- Slides with text only -->
-        <div class="mySlides" id="presidentslide"><div class="president" id="president"><p class="position-text">SSC PRESIDENT</p></div></div>
-        <div class="mySlides" id="vicepresidentslide"><div class="vicepresident" id="vicepresident"><p class="position-text">SSC VICE-PRESIDENT</p></div></div>
-        <div class="mySlides" id="secretaryslide"><div class="secretary" id="secretary"><p class="position-text">SSC SECRETARY</p></div></div>
-        <div class="mySlides" id="treasurerslide"><div class="treasurer" id="treasurer"><p class="position-text">SSC TREASURER</p></div></div>
-        <div class="mySlides" id="auditorslide"><div class="auditor" id="auditor"><p class="position-text">SSC AUDITOR</p></div></div>
-        <div class="mySlides" id="accountantslide"><div class="accountant" id="accountant"><p class="position-text">SSC ACCOUNTANT</p></div></div>
-       
+        <div class="mySlides1" id="presidentslide"><div class="president" id="president"><p class="position-text">SSC PRESIDENT</p></div></div>
+        <div class="mySlides1" id="vicepresidentslide"><div class="vicepresident" id="vicepresident"><p class="position-text">SSC VICE-PRESIDENT</p></div></div>
+        <div class="mySlides1" id="secretaryslide"><div class="secretary" id="secretary"><p class="position-text">SSC SECRETARY</p></div></div>
+        <div class="mySlides1" id="treasurerslide"><div class="treasurer" id="treasurer"><p class="position-text">SSC TREASURER</p></div></div>
+        <div class="mySlides1" id="auditorslide"><div class="auditor" id="auditor"><p class="position-text">SSC AUDITOR</p></div></div>
+        <div class="mySlides1" id="accountantslide"><div class="accountant" id="accountant"><p class="position-text">SSC ACCOUNTANT</p></div></div>
+        
+        <!-- Navigation buttons -->
+        <a class="prev" onclick="plusSlides1(-1)">&#10094; Previous</a>
+        <a class="next" onclick="plusSlides1(1)">Next &#10095;</a>
+    </div>
+    
+    <!-- Dots/circles for slide navigation -->
+    <br>
+    <div style="text-align:center">
+        <span class="dot1" onclick="currentSlide1(1)"></span>
+        <span class="dot1" onclick="currentSlide1(2)"></span>
+        <span class="dot1" onclick="currentSlide1(3)"></span>
+        <span class="dot1" onclick="currentSlide1(4)"></span>
+        <span class="dot1" onclick="currentSlide1(5)"></span>
+        <span class="dot1" onclick="currentSlide1(6)"></span>
+    </div>
+
+    <!-- JavaScript for slideshow functionality -->
+    <script>
+        var slideIndex = 1;
+        showSlides1(slideIndex);
+
+        function plusSlides1(n) {
+            showSlides1(slideIndex += n);
+        }
+
+        function currentSlide1(n) {
+            showSlides1(slideIndex = n);
+        }
+
+        function showSlides1(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides1");
+            var dots = document.getElementsByClassName("dot1");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+
+<div class="slideshow-container">
+
         <div class="mySlides" id="councilorslide"><div class="councilor" id="councilor"><p class="position-text">SBO COUNCILOR</p></div></div>
         <div class="mySlides" id="sbopresidentslide"><div class="sbopresident" id="sbopresident"><p class="position-text">SBO PRESIDENT</p></div></div>
         <div class="mySlides" id="sbovicepresidentslide"><div class="sbovicepresident" id="sbovicepresident"><p class="position-text">SBO VICE-PRESIDENT</p></div></div>
@@ -80,8 +130,7 @@
         <div class="mySlides" id="sbosecondyearrepslide"><div class="sbosecondyearrep" id="sbosecondyearrep"><p class="position-text">SBO 2ND YEAR REPRESENTATIVE</p></div></div>
         <div class="mySlides" id="sbothirdyearrepslide"><div class="sbothirdyearrep" id="sbothirdyearrep"><p class="position-text">SBO 3RD YEAR REPRESENTATIVE</p></div></div>
         <div class="mySlides" id="sbofourthyearrepslide"><div class="sbofourthyearrep" id="sbofourthyearrep"><p class="position-text">SBO 4TH YEAR REPRESENTATIVE</p></div></div>
-        
-        <!-- Navigation buttons -->
+
         <a class="prev" onclick="plusSlides(-1)">&#10094; Previous</a>
         <a class="next" onclick="plusSlides(1)">Next &#10095;</a>
     </div>
@@ -103,18 +152,6 @@
         <span class="dot" onclick="currentSlide(12)"></span>
         <span class="dot" onclick="currentSlide(13)"></span>
         <span class="dot" onclick="currentSlide(14)"></span>
-        <span class="dot" onclick="currentSlide(15)"></span>
-        <span class="dot" onclick="currentSlide(16)"></span>
-        <span class="dot" onclick="currentSlide(17)"></span>
-        <span class="dot" onclick="currentSlide(18)"></span>
-        <span class="dot" onclick="currentSlide(19)"></span>
-        <span class="dot" onclick="currentSlide(20)"></span>
-    </div>
-
-    <div class="submitbtncon">
-        <div class="submitbtnsize">
-            <button class="button-27" id="submitbtn">Submit</button>
-        </div>
     </div>
 
     <!-- JavaScript for slideshow functionality -->
@@ -149,10 +186,7 @@
     <script>
         // fetch natin yung data sa sql sa external js script
         const OfficerstoVote = JSON.parse('<?php echo $combinedJSON; ?>');
-        const loginData = JSON.parse('<?php echo json_encode($loginJSON); ?>');
-        const login_code = loginData.login_code;
-        console.log('Login Code:', login_code);
     </script>
-    <script src="test.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>
