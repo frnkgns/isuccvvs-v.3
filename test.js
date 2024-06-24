@@ -275,7 +275,7 @@ function Dynamicallycreateelement(){
         
                 //ilalagay natin sa perfective positions yung mga candidates, hindi kasi pwedeng nasa president category
         //si treasurer and the rest of the positions, actually maganda to kapag loop
-        var Positions = ['president', 'vice-president', 'secretary', 'treasurer', 'auditor', 
+        var Positions = ['president', 'vice-president', 'secretary', 'treasurer', 'auditor', 'accountant', 
         'sbocouncilor', 'sbopresident','sbovice-president', 'sbosecretary', 'sbotreasurer', 'sboauditor', 'sboaccountant','sbopio', 'sbobusinessmanageri', 'sbobusinessmanagerii', 'sbo1styearrepresentative', 
         'sbo2ndyearrepresentative', 'sbo3rdyearrepresentative', 'sbo4thyearrepresentative'];
 
